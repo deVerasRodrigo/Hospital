@@ -19,4 +19,15 @@ public abstract class Funcionario extends Pessoa{
     public abstract void baterPonto(int hora, int minuto);
 
     public abstract void iniciarAtendimento(Paciente paciente);
+    @Override
+    public boolean equals(Object o){
+        if (this == o){
+            return true;
+        }
+        if (this.getClass() != o.getClass()){
+            return false;
+        }
+        Funcionario funcionario = (Funcionario) o;
+        return this.id.equals(funcionario.id);
+    }
 }
